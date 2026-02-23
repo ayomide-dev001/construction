@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Buildex - Construction & Building Solutions</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -15,16 +18,21 @@
     />
   </head>
   <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
       <div class="top-bar">
         <div class="container">
           <div class="contact-info">
             <span><i class="fas fa-phone"></i> +012 345 6789</span>
             <span><i class="fas fa-envelope"></i> info@buildex.com</span>
-            <span><i class="fas fa-clock"></i> Mon - Fri: 8:00 - 17:00</span>
+            <span class="hide-mobile"
+              ><i class="fas fa-clock"></i> Mon - Fri: 8:00 - 17:00</span
+            >
           </div>
-          <div class="social-links">
+          <div class="social-links hide-mobile">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -32,7 +40,7 @@
           </div>
         </div>
       </div>
-      <nav class="navbar">
+      <nav class="navbar" id="navbar">
         <div class="container">
           <a href="#" class="logo">
             <div class="logo-icon">
@@ -43,7 +51,9 @@
               <span class="logo-sub">Construction</span>
             </div>
           </a>
-          <ul class="nav-links">
+
+          <!-- Desktop Navigation -->
+          <ul class="nav-links" id="navLinks">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -51,16 +61,30 @@
             <li><a href="#team">Team</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li class="mobile-only">
+              <a href="#contact" class="btn-primary">Get A Quote</a>
+            </li>
+            <li class="mobile-only">
+              <div class="mobile-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </li>
           </ul>
+
           <div class="header-actions">
             <button class="search-btn"><i class="fas fa-search"></i></button>
-            <a href="#contact" class="btn-primary">Get A Quote</a>
+            <a href="#contact" class="btn-primary hide-mobile">Get A Quote</a>
           </div>
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+
+          <!-- Mobile Hamburger -->
+          <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
       </nav>
     </header>
@@ -218,6 +242,35 @@
               </ul>
             </div>
 
+            <div class="tab-content" id="construction">
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> Quality construction
+                  materials
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Expert construction team
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> On-time project delivery
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="support">
+              <ul class="feature-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> 24/7 customer support
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Post-construction warranty
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Maintenance services
+                </li>
+              </ul>
+            </div>
+
             <div class="about-author">
               <img
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100"
@@ -245,11 +298,13 @@
     <section class="brands-section">
       <div class="container">
         <div class="brands-slider">
-          <div class="brand-item"><i class="fab fa-envato"></i> envato</div>
-          <div class="brand-item"><i class="fab fa-envato"></i> envato</div>
-          <div class="brand-item"><i class="fab fa-envato"></i> envato</div>
-          <div class="brand-item"><i class="fab fa-envato"></i> envato</div>
-          <div class="brand-item"><i class="fab fa-envato"></i> envato</div>
+          <div class="brand-item"><i class="fas fa-building"></i> Buildex</div>
+          <div class="brand-item"><i class="fas fa-hammer"></i> Construct</div>
+          <div class="brand-item"><i class="fas fa-hard-hat"></i> Builder</div>
+          <div class="brand-item"><i class="fas fa-tools"></i> Tools</div>
+          <div class="brand-item">
+            <i class="fas fa-drafting-compass"></i> Design
+          </div>
         </div>
       </div>
     </section>
@@ -262,7 +317,7 @@
           <h2 class="section-title">We Are Quality General Service</h2>
         </div>
 
-        <div class="services-slider">
+        <div class="services-grid">
           <div class="service-card">
             <div class="service-image">
               <img
@@ -343,15 +398,6 @@
               ></a>
             </div>
           </div>
-        </div>
-
-        <div class="services-nav">
-          <button class="nav-btn prev">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <button class="nav-btn next">
-            <i class="fas fa-arrow-right"></i>
-          </button>
         </div>
       </div>
     </section>
@@ -436,7 +482,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle">Our Team Member</span>
-          <h2 class="section-title">Our Dedicated Team Metting</h2>
+          <h2 class="section-title">Our Dedicated Team Meeting</h2>
         </div>
 
         <div class="team-grid">
@@ -763,6 +809,80 @@
 
         <div class="text-center">
           <a href="#" class="btn-primary">View All Blog</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Contact Us</span>
+          <h2 class="section-title">Get In Touch With Us</h2>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-info-box">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Our Location</h4>
+                <p>123 Miranda Hale City, New York, US</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone Number</h4>
+                <p>+099 695 69 555</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email Address</h4>
+                <p>info@buildex.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Working Hours</h4>
+                <p>Mon - Fri: 8:00 - 17:00</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number" />
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Subject" />
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
